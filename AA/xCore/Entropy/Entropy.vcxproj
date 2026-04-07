@@ -83,6 +83,12 @@
     <ClCompile Include="D3DEngine\d3deng_input.cpp" />
     <ClCompile Include="D3DEngine\d3deng_vram.cpp" />
     <ClCompile Include="e_netfs.cpp" />
+    <ClCompile Include="Network\FiFo.cpp" />
+    <ClCompile Include="Network\NetAddress.cpp" />
+    <ClCompile Include="Network\NetCommon.cpp" />
+    <ClCompile Include="Network\NetSocket.cpp" />
+    <ClCompile Include="Network\NetStream.cpp" />
+    <ClCompile Include="Network\PC\NetLib.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\e_cdfs.hpp" />
@@ -96,10 +102,16 @@
     <ClInclude Include="e_Input_Gadget_Defines.hpp" />
     <ClInclude Include="e_netfs.hpp" />
     <ClInclude Include="e_netfsdefs.hpp" />
+    <ClInclude Include="e_Network.hpp" />
     <ClInclude Include="e_ScratchMem.hpp" />
     <ClInclude Include="e_Text.hpp" />
     <ClInclude Include="e_View.hpp" />
     <ClInclude Include="e_VRAM.hpp" />
+    <ClInclude Include="Network\FiFo.hpp" />
+    <ClInclude Include="Network\NetAddress.hpp" />
+    <ClInclude Include="Network\NetDefines.hpp" />
+    <ClInclude Include="Network\NetSocket.hpp" />
+    <ClInclude Include="Network\NetStream.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

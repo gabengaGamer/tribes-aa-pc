@@ -19,11 +19,11 @@
 #include "x_files.hpp"
 #include "e_netfs.hpp"
 #include "e_netfsdefs.hpp"
-#include "netlib\netlib.hpp"
+#include "e_Network.hpp"
+#include "Network/netsocket.hpp"
 #include "tokenizer\tokenizer.hpp"
 #include "entropy.hpp"
 #include "x_threads.hpp"
-#include "..\..\Demo1/SpecialVersion.hpp"
 
 #ifdef TARGET_PS2
 #include "ps2\iop\iop.hpp"
@@ -68,6 +68,7 @@ static xbool                    s_Initialized       = FALSE;    // TRUE after ne
 
 static net_address              s_Server;                       // IP/Port of the server
 static net_address              s_Client;                       // IP/Port of the client
+static net_socket               s_Socket;                       // Socket used for send/receive
 static char                     s_Hostname[128];
 
 //==============================================================================
@@ -122,29 +123,27 @@ void    netfs_Init(void)
         x_printfxy(3,6,"Waiting for interface to attach...\n");
         eng_PageFlip();
     }
-    net_Bind(s_Client);
+    s_Socket.Bind();
 
     // We could not find the "serverip.txt" file so we do a broadcast to see if we
     // can find our fileserver.
     Request.Header.Type = FSRV_REQ_FIND;
-    Request.Find.Address = s_Client.IP;
-    Request.Find.Port    = s_Client.Port;
-    s_Server.IP = (u32)-1;
-    s_Server.Port = FILESERVER_PORT;
+    Request.Find.Address = s_Client.GetIP();
+    Request.Find.Port    = s_Client.GetPort();
+    s_Server.Setup((s32)(u32)-1, FILESERVER_PORT);
     x_printfxy(3,6,"Searching for a server.....\n");
-    net_IPToStr(s_Client.IP,iptext);
-    x_printfxy(3,7,"My address = %s:%d\n",iptext,s_Client.Port);
+    net_ResolveIP(s_Client.GetIP(),iptext);
+    x_printfxy(3,7,"My address = %s:%d\n",iptext,s_Client.GetPort());
     eng_PageFlip();
     eng_PageFlip();
     SendSyncPacket(Request,sizeof(Request.Find),Reply,sizeof(Reply.Find));
-    net_IPToStr(Reply.Find.Address,iptext);
+    net_ResolveIP(Reply.Find.Address,iptext);
     x_printfxy(1,7,"Server found at %s:%d\n",iptext,Reply.Find.Port);
     eng_PageFlip();
     eng_PageFlip();
-    s_Server.IP = Reply.Find.Address;
-    s_Server.Port = Reply.Find.Port;
+    s_Server.Setup(Reply.Find.Address, Reply.Find.Port);
 
-    net_IPToStr(s_Server.IP,iptext);
+    net_ResolveIP(s_Server.GetIP(),iptext);
     x_DebugMsg("Using host server (%s) IP address %s\n",s_Hostname,iptext);
 
     x_DebugMsg("Attempting to reset fileserver...\n");
@@ -706,7 +705,7 @@ static xbool SendPacket(fileserver_request &Request,s32 RequestLength)
     // Have to include the size of the packet header. At the moment, this is
     // only 4 bytes but it will be bigger
     Request.Header.Sequence = TopSequence++;x_rand();
-    net_Send(s_Client,s_Server,(u8 *)&Request,RequestLength+sizeof(Request.Header));
+    s_Socket.Send(s_Server,(u8 *)&Request,RequestLength+sizeof(Request.Header));
     return TRUE;
 }
 
@@ -721,7 +720,7 @@ static xbool GetPacket(fileserver_reply &Response,s32 ResponseLength)
     while (Timeout)
     {
         Length = ResponseLength+sizeof(Response.Header);
-        Status = net_Receive(s_Client,s_Server,(u8 *)&Response,Length);
+        Status = s_Socket.Receive(s_Server,(u8 *)&Response,Length);
         Length -= sizeof(Response.Header);
         
         if ( Status )
@@ -733,4 +732,3 @@ static xbool GetPacket(fileserver_reply &Response,s32 ResponseLength)
     }
     return FALSE;
 }
-

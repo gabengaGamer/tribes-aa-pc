@@ -19,6 +19,12 @@
     <Filter Include="External">
       <UniqueIdentifier>{99228557-3bcd-400d-b355-b4ebaf2d6c90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{fca2a860-3f5b-46e5-b1c2-5753d86a6b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\PC">
+      <UniqueIdentifier>{17bf01fe-2da8-40a7-8ec1-78b9703823c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Common\e_cdfs.cpp">
@@ -54,47 +60,23 @@
     <ClCompile Include="D3DEngine\d3deng_vram.cpp">
       <Filter>Implementation - PC</Filter>
     </ClCompile>
-    <ClCompile Include="PS2\ps2_dlist.cpp">
-      <Filter>Implementation - PS2</Filter>
+    <ClCompile Include="Network\FiFo.cpp">
+      <Filter>Network</Filter>
     </ClCompile>
-    <ClCompile Include="PS2\ps2_dma.cpp">
-      <Filter>Implementation - PS2</Filter>
+    <ClCompile Include="Network\NetAddress.cpp">
+      <Filter>Network</Filter>
     </ClCompile>
-    <ClCompile Include="PS2\ps2_dmaman.cpp">
-      <Filter>Implementation - PS2</Filter>
+    <ClCompile Include="Network\NetCommon.cpp">
+      <Filter>Network</Filter>
     </ClCompile>
-    <ClCompile Include="PS2\ps2_draw.cpp">
-      <Filter>Implementation - PS2</Filter>
+    <ClCompile Include="Network\NetSocket.cpp">
+      <Filter>Network</Filter>
     </ClCompile>
-    <ClCompile Include="PS2\ps2_engine.cpp">
-      <Filter>Implementation - PS2</Filter>
+    <ClCompile Include="Network\NetStream.cpp">
+      <Filter>Network</Filter>
     </ClCompile>
-    <ClCompile Include="PS2\ps2_except.cpp">
-      <Filter>Implementation - PS2</Filter>
-    </ClCompile>
-    <ClCompile Include="PS2\ps2_font.cpp">
-      <Filter>Implementation - PS2</Filter>
-    </ClCompile>
-    <ClCompile Include="PS2\ps2_framebuf.cpp">
-      <Filter>Implementation - PS2</Filter>
-    </ClCompile>
-    <ClCompile Include="PS2\ps2_gsreg.cpp">
-      <Filter>Implementation - PS2</Filter>
-    </ClCompile>
-    <ClCompile Include="PS2\ps2_pad.cpp">
-      <Filter>Implementation - PS2</Filter>
-    </ClCompile>
-    <ClCompile Include="PS2\ps2_vifgif.cpp">
-      <Filter>Implementation - PS2</Filter>
-    </ClCompile>
-    <ClCompile Include="PS2\ps2_vram.cpp">
-      <Filter>Implementation - PS2</Filter>
-    </ClCompile>
-    <ClCompile Include="PS2\IOP\iop.cpp">
-      <Filter>Implementation - PS2\IOP</Filter>
-    </ClCompile>
-    <ClCompile Include="PS2\IOP\usb.cpp">
-      <Filter>Implementation - PS2\IOP</Filter>
+    <ClCompile Include="Network\PC\NetLib.cpp">
+      <Filter>Network\PC</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,211 +92,7 @@
     <ClInclude Include="Common\e_View_inline.hpp">
       <Filter>Implementation - Common</Filter>
     </ClInclude>
-    <ClInclude Include="PS2\ps2_exceptiondefs.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </ClInclude>
-    <ClInclude Include="PS2\ps2_vifgif_inline.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\gcc\ee\include\_ansi.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\PS2-DevKit-Debug\_SN_in_VC.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\gcc\ee\include\sys\config.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\d3d8.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\d3d8caps.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\d3d8types.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\d3dx8.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\d3dx8core.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\d3dx8effect.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\d3dx8math.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\d3dx8mesh.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\d3dx8shape.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\d3dx8tex.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\devfont.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\devgif.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\devvif0.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\devvif1.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\devvu0.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\devvu1.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\dpaddr.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\dplay8.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\DirectX8\dxfile.h">
-      <Filter>External</Filter>
-    </ClInclude>
     <ClInclude Include="e_Engine.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\eekernel.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\eeregs.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\eestruct.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\eetypes.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\common\include\libcdvd.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\libdev.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\libdma.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\libdmapk.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\libgifpk.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\libgraph.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\libpad.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\libpkt.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\libvifpk.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\gcc\ee\include\sys\reent.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\sifdev.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\3rdParty\PS2\Sony\sce\ee\include\sifrpc.h">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_array.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_array_private.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_bitmap.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_bitmap_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_color.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_color_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_debug.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_files.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_math.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_math_bb_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_math_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_math_m4_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_math_p_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_math_q_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_math_r3_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_math_v2_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_math_v3_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_math_v4_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_memory.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_memory_private.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_plus.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_stdio.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_string.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\Implementation\x_string_inline.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_target.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_time.hpp">
-      <Filter>External</Filter>
-    </ClInclude>
-    <ClInclude Include="..\x_files\x_types.hpp">
       <Filter>External</Filter>
     </ClInclude>
     <ClInclude Include="e_Draw.hpp" />
@@ -326,78 +104,26 @@
     <ClInclude Include="e_View.hpp" />
     <ClInclude Include="e_VRAM.hpp" />
     <ClInclude Include="Entropy.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\3rdParty\DirectX8\d3dx8math.inl">
-      <Filter>External</Filter>
-    </None>
+    <ClInclude Include="e_Network.hpp" />
+    <ClInclude Include="Network\NetStream.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\FiFo.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\NetAddress.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\NetDefines.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\NetSocket.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D3DEngine\d3deng_private.hpp">
       <Filter>Implementation - PC</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\3rdParty\DirectX8\d3d8.lib">
-      <Filter>Implementation - PC\Libs</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\3rdParty\DirectX8\d3dx8.lib">
-      <Filter>Implementation - PC\Libs</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\3rdParty\DirectX8\dinput8.lib">
-      <Filter>Implementation - PC\Libs</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\3rdParty\DirectX8\dsound.lib">
-      <Filter>Implementation - PC\Libs</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\3rdParty\DirectX8\dxguid.lib">
-      <Filter>Implementation - PC\Libs</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_dlist.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_dma.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_dmaman.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_except.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_font.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_framebuf.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_gsreg.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_misc.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_pad.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_vifgif.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\ps2_vram.hpp">
-      <Filter>Implementation - PS2</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\IOP\iop.hpp">
-      <Filter>Implementation - PS2\IOP</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\IOP\netdefs.hpp">
-      <Filter>Implementation - PS2\IOP</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\IOP\netvars.hpp">
-      <Filter>Implementation - PS2\IOP</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\IOP\usb.hpp">
-      <Filter>Implementation - PS2\IOP</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PS2\IOP\usbdefs.hpp">
-      <Filter>Implementation - PS2\IOP</Filter>
     </CustomBuild>
   </ItemGroup>
 </Project>

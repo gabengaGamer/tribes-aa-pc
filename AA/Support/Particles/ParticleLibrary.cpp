@@ -133,7 +133,7 @@ static void LoadTexture( xbitmap& BMP, const char* pFileName )
 
         if( !Result )
         {
-            //x_DebugMsg("Using default for bitmap %1s\n",pFileName);
+            x_DebugMsg("PARTICLE: Failed to load texture '%s', using default\n", pFileName);
         }
 
         //printf("BUILDING MIPS\n");

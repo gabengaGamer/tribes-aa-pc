@@ -39,8 +39,6 @@
 #include "dlg_SoundTest.hpp"
 #include "dlg_controlconfig2.hpp"
 #include "dlg_player.hpp"
-#include "dlg_OnlineMainMenu.hpp"
-#include "dlg_OfflineMainMenu.hpp"
 #include "dlg_OptionsMainMenu.hpp"
 #include "dlg_AudioOptions.hpp"
 #include "dlg_NetworkOptions.hpp"
